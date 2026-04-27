@@ -1,3 +1,5 @@
+const URL_CADASTRO = import.meta.env.VITE_URL_JSON;
+
 function Troca_Telas() {
   // Seleciona os elementos
   const cartaoAutenticacao = document.getElementById("cartaoAutenticacao");
@@ -30,6 +32,70 @@ function campos_preenchidos() {
     }
   }
   return preenchidos;
+}
+function Comparar_Senhas() {
+  const senha = document.getElementById("cadastro-senha");
+  const confirmar_senha = document.getElementById("cadastro-confirmar-senha");
+
+  if (senha.value !== confirmar_senha.value) {
+    console.log("As senhas Não coincidem");
+    return false;
+  }
+  return true;
+}
+function Cadastro() {
+  const formulario = document.getElementById("formularioCadastro");
+
+  formulario.addEventListener("submit", async function (evento) {
+    evento.preventDefault();
+    if (!campos_preenchidos() || !Comparar_Senhas()) {
+      return;
+    }
+
+    let dados = new FormData(formulario);
+    let usuario = Object.fromEntries(dados.entries());
+
+    try {
+      const busca = await fetch(URL_CADASTRO);
+      const lista_usuarios = await busca.json();
+
+      const email_existe = lista_usuarios.some(
+        (u) => u["email"] === usuario["email"]
+      );
+      const nome_existe = lista_usuarios.some(
+        (u) => u["nome"] === usuario["nome"]
+      );
+
+      if (email_existe) {
+        alert("Este e-mail já está cadastrado! Tente outro.");
+        formulario.email.value = "";
+        return;
+      }
+      if (nome_existe) {
+        alert("Este nome já está cadastrado! Tente outro.");
+        formulario.nome.value = "";
+        return;
+      }
+      // Envia para o JSON da API
+      const resposta = await fetch(URL_CADASTRO, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+
+      if (resposta.ok) {
+        alert("Cadastro realizado com sucesso no MockAPI!");
+        formulario.reset();
+      } else {
+        alert("Erro ao salvar os dados.");
+      }
+    } catch (erro) {
+      console.error("Erro na requisição:", erro);
+      alert("Não foi possível conectar ao servidor.");
+    }
+  });
 }
 // Lógica de Login
 async function login(event) {
@@ -66,16 +132,7 @@ async function login(event) {
     password.value = "";
   }
 }
-function Comparar_Senhas() {
-  const senha = document.getElementById("cadastro-senha");
-  const confirmar_senha = document.getElementById("cadastro-confirmar-senha");
 
-  if (senha.value !== confirmar_senha.value) {
-    console.log("As senhas Não coincidem");
-    return false;
-  }
-  return true;
-}
 // Selecão do botão de Login e evento que chama a função quando o botão for clicado
 const btn_entrar = document.querySelector("#botao-login");
 btn_entrar.addEventListener("click", login);
@@ -83,4 +140,5 @@ btn_entrar.addEventListener("click", login);
 // DomContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
   Troca_Telas();
+  Cadastro();
 });
