@@ -123,15 +123,16 @@ async function login(event) {
   let password_value = password.value;
 
   // Busca o arquivo JSON e converte para um objeto JavaScript
-  const resposta = await fetch("../data/users.json");
+  const resposta = await fetch(URL_CADASTRO);
   const users = await resposta.json();
 
   // Procura o usuário com o email fornecido
-  const email_encontrado = users.find((user) => user.email === email_value);
+  const email_encontrado = users.find((user) => user["email"] === email_value);
 
   // Se encontrar o email, verifica se a senha bate com a senha armazenada
   if (email_encontrado) {
-    if (email_encontrado.password_hash === password_value) {
+    const SenhaCorreta = bcrypt.compareSync(password_value, email_encontrado["senha"])
+    if (SenhaCorreta) {
       alert("Login bem-sucedido!");
       email.value = "";
       password.value = "";
