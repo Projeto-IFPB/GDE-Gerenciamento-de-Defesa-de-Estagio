@@ -236,3 +236,38 @@ form {
 .texto-alternativo a:hover {
     text-decoration: underline;
 }
+
+/*
+==========================================
+7. MENSAGENS DE AUTENTICAÇÃO
+==========================================
+*/
+.mensagem {
+    margin-top: 12px;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.erro {
+    background-color: #f8d7da;
+    color: #721c24
+}
+
+.oculto {
+    display: none;
+}
+
+.fade-out{
+    opacity: 0;
+}
