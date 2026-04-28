@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="background-conteudo">
-        <div class="cartao-autenticacao" id="cartaoAutenticacao">
-            
-            <div class="container-formulario" id="containerFormulario">
-                
-                <div class="secao-formulario secao-login">
+        <div class="cartao-autenticacao">
+            <div id="containerPaineis" class="container-paineis">
+
+
+                <div id="painelCamposLogin" class="painel">
                     <img src="assets/img/preview-pde-com-titulo-e-transparente.png" alt="Logo PDE" class="logo">
                     <p class="subtitulo">Faça <span class="destaque">Login</span> para acessar sua conta</p>
                     
@@ -29,13 +29,32 @@
                         
                         <button type="button" class="botao-principal" id="botao-login">Entrar</button>
                     </form>
-                    
-                    <p class="texto-alternativo">
-                        Não tem uma conta? <a href="#" id="botaoParaCadastro">Cadastre-se</a>
+
+                    <p id="linkRedirecionarCadastro" class="texto-alternativo">
+                        Não tem uma conta? <a href="#">Cadastre-se</a>
                     </p>
                 </div>
 
-                <div class="secao-formulario secao-cadastro">
+
+                <div id="painelRedirecionarCadastro" class="painel">
+                    <div class="painel-redirecionar">
+                        <h2>Novo por aqui?</h2>
+                        <p>Cadastre-se no nosso sistema e gerencie seus estágios de forma fácil.</p>
+                        <button id="botaoRedirecionarCadastro" class="botao-redirecionar">Cadastrar</button>
+                    </div>
+                </div>
+
+
+                <div id="painelRedirecionarLogin" class="painel">
+                    <div class="painel-redirecionar">
+                        <h2>Já tem uma conta?</h2>
+                        <p>Faça login com suas credenciais para acessar o portal de estágios.</p>
+                        <button id="botaoRedirecionarLogin" class="botao-redirecionar">Fazer Login</button>
+                    </div>
+                </div>
+
+
+                <div id="painelCamposCadastro" class="painel">
                     <img src="assets/img/preview-pde-com-titulo-e-transparente.png" alt="Logo PDE" class="logo">
                     <p class="subtitulo"><span class="destaque">Cadastre-se</span> no sistema de estágios</p>
                     
@@ -68,13 +87,15 @@
                         
                         <button type="submit" class="botao-principal">Cadastrar</button>
                     </form>
-                    
-                    <p class="texto-alternativo">
-                        Já tem uma conta? <a href="#" id="botaoParaLogin">Faça Login</a>
+
+                    <p id="linkRedirecionarLogin" class="texto-alternativo">
+                        Já tem uma conta? <a href="#">Faça Login</a>
                     </p>
                 </div>
 
+
             </div>
+            <div id="containerAzul" class="container-azul"></div>
         </div>
     </div>
 </body>
