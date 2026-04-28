@@ -22,5 +22,8 @@
   "homepage": "https://github.com/Projeto-IFPB/PDE-Portal-de-Defesas-Estagios#readme",
   "devDependencies": {
     "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3"
   }
 }
