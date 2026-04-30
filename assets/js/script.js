@@ -384,6 +384,7 @@ async function login(event) {
       alert("Login bem-sucedido!");
       email.value = "";
       password.value = "";
+      window.location.replace("../../pages/pagina_aluno.html");
       return (current_user = email_encontrado);
     } else {
       alert("Senha incorreta!");
