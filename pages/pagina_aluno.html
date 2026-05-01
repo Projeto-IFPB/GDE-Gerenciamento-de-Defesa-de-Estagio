@@ -6,7 +6,7 @@
     <title>Dashboard Aluno</title>
     <link rel="stylesheet" href="../assets/css/pagina_aluno.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="../assets/js/pagina_aluno.js" defer></script>
+    <script type="module" src="../assets/js/autenticacoes.js" defer></script>
     
 </head>
 <body>
@@ -17,8 +17,11 @@
 </div>    
 <div id="cadastrar-estagio">
     <h3><i class="fa-solid fa-plus"></i>Cadastrar Novo Estágio</h3>
-    <h4>Registre seu novo estágio.</h4>
-    <button type="button"><i class="fa-solid fa-plus"></i><p>Novo Estágio</p></button>
+    <h4 class="mobile">Registre seu novo estágio.</h4>
+    <div class="container-novo-estagio-desktop">
+        <h4 class="desktop">Registre um novo estágio para começar o processo de aprovação.</h4>
+        <button type="button"><i class="fa-solid fa-plus"></i><p>Novo Estágio</p></button>
+    </div>
 </div>
 
 <section id="meus-estagios">
@@ -29,39 +32,54 @@
         <div class="card-estagio">
 
             <div class="card-header">
-                <h2><i class="fa-regular fa-building"></i>Wall Interprise</h2>
+                <div class="meus-estagios-desktop-titulo">
+                    <h2><i class="fa-regular fa-building"></i>Wall Interprise</h2>
+                    <span id="status-desktop">Em Andamento</span>
+                </div>
                 <button class="btn-detalhes"><i class="fa-regular fa-eye"></i> Detalhes</button>
             </div>
 
-            <p id="status">Em Andamento</p>
-            <p id="inicio"><i class="fa-regular fa-calendar"></i> Início: 01/05/2026</p>
-            <p id="orientador"><span>Orientador:</span>Prof. Francisco Petronio</p>
+            <p id="status-mobile">Em Andamento</p>
+            <div class="meus-estagios-desktop">
+                <p id="inicio"><i class="fa-regular fa-calendar"></i> <span>Início:</span>01/05/2026</p>
+                <p id="orientador"><span>Orientador:</span>Prof. Francisco Petronio</p>
+            </div>
             <p id="curso"><span>Curso:</span>Engenharia de Software</p>
         </div>
 
         <div class="card-estagio">
 
             <div class="card-header">
-                <h2><i class="fa-regular fa-building"></i>Wall Interprise</h2>
+                <div class="meus-estagios-desktop-titulo">
+                    <h2><i class="fa-regular fa-building"></i>Wall Interprise</h2>
+                    <span id="status-desktop">Em Andamento</span>
+                </div>
                 <button class="btn-detalhes"><i class="fa-regular fa-eye"></i> Detalhes</button>
             </div>
 
-            <p id="status">Em Andamento</p>
-            <p id="inicio"><i class="fa-regular fa-calendar"></i> Início: 01/05/2026</p>
-            <p id="orientador"><span>Orientador:</span>Prof. Francisco Petronio</p>
+            <p id="status-mobile">Em Andamento</p>
+            <div class="meus-estagios-desktop">
+                <p id="inicio"><i class="fa-regular fa-calendar"></i> <span>Início:</span>01/05/2026</p>
+                <p id="orientador"><span>Orientador:</span>Prof. Francisco Petronio</p>
+            </div>
             <p id="curso"><span>Curso:</span>Engenharia de Software</p>
         </div>
 
         <div class="card-estagio">
 
             <div class="card-header">
-                <h2><i class="fa-regular fa-building"></i>Wall Interprise</h2>
+                <div class="meus-estagios-desktop-titulo">
+                    <h2><i class="fa-regular fa-building"></i>Wall Interprise</h2>
+                    <span id="status-desktop">Em Andamento</span>
+                </div>
                 <button class="btn-detalhes"><i class="fa-regular fa-eye"></i> Detalhes</button>
             </div>
 
-            <p id="status">Em Andamento</p>
-            <p id="inicio"><i class="fa-regular fa-calendar"></i> Início: 01/05/2026</p>
-            <p id="orientador"><span>Orientador:</span>Prof. Francisco Petronio</p>
+            <p id="status-mobile">Em Andamento</p>
+            <div class="meus-estagios-desktop">
+                <p id="inicio"><i class="fa-regular fa-calendar"></i> <span>Início:</span>01/05/2026</p>
+                <p id="orientador"><span>Orientador:</span>Prof. Francisco Petronio</p>
+            </div>
             <p id="curso"><span>Curso:</span>Engenharia de Software</p>
         </div>
 
